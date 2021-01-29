@@ -1,79 +1,78 @@
 <template>
-    <section>
-        <Navigation />
+  <section>
+    <Navigation />
 
-        <div class="galleries">
-            
-            <Gallery 
-                v-for="gallery in galleries"
-                :key="gallery.id"
-                :thumbnail="gallery.thumbnail"
-                :title="gallery.title"
-                :id="gallery.id"
-                :previewText="gallery.previewText" />
-            
-        </div>
-    </section>
+    <div class="galleries">
+      <Gallery
+        v-for="gallery in galleries"
+        :key="gallery.id"
+        :thumbnail="gallery.thumbnail"
+        :title="gallery.title"
+        :id="gallery.id"
+        :previewText="gallery.previewText"
+      />
+    </div>
+  </section>
 </template>
 
 <script>
-import Gallery from "@/components/Gallery"
-import Navigation from "@/components/Navigation"
+import Gallery from "@/components/Gallery";
+import Navigation from "@/components/Navigation";
 
 export default {
-    components: {
-        Gallery,
-        Navigation
-    },
-    asyncData() {
-        return new Promise((resolve, reject) => {
-                setTimeout(() => {
-                    resolve({
-                        galleries: [
-                            {
-                                id: "1",
-                                title: "DHL Checker",
-                                previewText: "Dock Management System DHL",
-                                thumbnail: "https://drive.google.com/uc?id=13oQa0vPlq9JquVbsuhy7SYuW9ORStr-2"
-                            },
-                            {
-                                id: "2",
-                                title: "PNM Portal",
-                                previewText: "Portal Pegawai",
-                                thumbnail: "https://drive.google.com/uc?id=1Ljt2B4rEgjR_wPKrBMn6E-cNWG8RSW_n"
-                            },
-                            {
-                                id: "3",
-                                title: "LOL Chat",
-                                previewText: "League of Legend Chat",
-                                thumbnail: "https://drive.google.com/uc?id=0BxU8nQHWvGugM19MZUMzVGlTWkk"
-                            },
-                            {
-                                id: "4",
-                                title: "Geo Energy Website",
-                                previewText: "Geo Energy Website",
-                                thumbnail: "https://drive.google.com/uc?id=18lC3hoenG1p2MrpIB7RwXhWAkoOtLo3E"
-                            }
-                        ]
-                    })
-                }, 1500)
+  components: {
+    Gallery,
+    Navigation
+  },
+  asyncData() {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve({
+          galleries: [
+            {
+              id: "1",
+              title: "DHL Checker",
+              previewText: "Dock Management System DHL",
+              thumbnail:
+                "https://drive.google.com/uc?id=1JpOR0j2Lap19U7DhOVQiFE55E3aQ-Lt0"
+            },
+            {
+              id: "2",
+              title: "PNM Portal",
+              previewText: "Portal Pegawai",
+              thumbnail:
+                "https://drive.google.com/uc?id=1gRNcGDWMpxz0u1CoNed6_vtKrPVBNnMJ"
+            },
+            {
+              id: "3",
+              title: "LOL Chat",
+              previewText: "League of Legend Chat",
+              thumbnail:
+                "https://drive.google.com/uc?id=1EdE9DpNSWjF0vVuBOzSmHW9NhZx6myev"
+            },
+            {
+              id: "4",
+              title: "Geo Energy Website",
+              previewText: "Geo Energy Website",
+              thumbnail:
+                "https://drive.google.com/uc?id=161uXS9tAnJcJ-dOWz_n9-hnzvz2-QKhX"
             }
-        )
-    }
-}
+          ]
+        });
+      }, 1500);
+    });
+  }
+};
 </script>
 
 <style scoped>
 .center {
-     text-align: center;
+  text-align: center;
 }
-.galleries{
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    align-items: center;
-    
+.galleries {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
 }
-
 </style>
-

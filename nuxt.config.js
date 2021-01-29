@@ -1,5 +1,13 @@
 module.exports = {
   /*
+   ** Build for static site i.e.: netlify
+   */
+  target: 'static',
+  ssr: false,
+  generate: {
+    fallback: true
+  },
+  /*
    ** Headers of the page
    */
   head: {
